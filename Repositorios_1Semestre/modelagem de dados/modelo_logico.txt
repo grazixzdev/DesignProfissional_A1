@@ -1,0 +1,34 @@
+evento(id_evento, nome, descrição, id_rota)
+id_rota referencia rota
+
+rota(id_rota, nome, descrição, lista_paradas, distancia_total, tempo_estimado)
+
+rota_parada(id_rota, id_parada)
+id_rota referencia rota
+id_parada referencia parada
+
+tipo parada(id_tipo, id_parada, descrição)
+id_parada referencia parada
+
+sensor(id_sensor, id_parada, id_onibus, descriacao)
+id_parada referencia parada
+id_onibus referencia onibus
+
+onibus(id_onibus, placa, modelo, capacidade, autonomia)
+
+status(id_status, id_onibus, descrição)
+id_status referenvia onibus
+
+viagem(id_viagem, id_rota, id_onibus, horario_inicio, horario_termino)
+id_rota referencia rota
+id_onibus referencia ônibus
+
+viagem passageiro(id_viagem, id_passageiro)
+id_viagem referencia viagem
+id_passageiro referencia passageiro
+
+passageiro(id_passageiro, nome, historico_viagens, preferencia)
+
+pagamento(id_pagamento, id_viagem, id_passageiro, valor , metodo, data_hora)
+id_viagem referencia viagem
+id_passageiro referencia passageiro
